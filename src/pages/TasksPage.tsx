@@ -1,4 +1,15 @@
 import { useEffect, useState } from "react";
+
+declare global {
+    interface Window {
+        electronAPI: {
+            fetchTasks: () => Promise<Task[]>;
+            addTask: (title: string, description: string, priority: "Basse" | "Moyenne" | "Haute") => Promise<Task>;
+            toggleTask: (id: number) => Promise<Task>;
+            deleteTask: (id: number) => Promise<void>;
+        };
+    }
+}
 import {
     Container,
     TextField,

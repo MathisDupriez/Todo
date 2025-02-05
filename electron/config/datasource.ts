@@ -5,7 +5,7 @@ import path from "path";
 import { app } from "electron";
 
 const databasePath = path.join(app.getPath("userData"), "database.sqlite");
-
+console.log("📁 Database path", databasePath);
 export const AppDataSource = new DataSource({
     type: "sqlite",
     database: databasePath,

@@ -1141,6 +1141,7 @@ Task = __decorateClass([
   Entity()
 ], Task);
 const databasePath = path.join(app.getPath("userData"), "database.sqlite");
+console.log("📁 Database path", databasePath);
 const AppDataSource = new DataSource({
   type: "sqlite",
   database: databasePath,
